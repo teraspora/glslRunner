@@ -37,7 +37,8 @@ def run(shader):
     imgs = [f'{os.path.join(IMAGE_DIR, img)}' for img in choose_files(IMAGE_DIR, 8)]
     glsl_cmd = ['glslViewer', f'{SHADER_DIR}/{shader}'] + imgs + CMD_REDIRECT
     cmd_str = ' '.join(glsl_cmd)
-    Popen(glsl_cmd)
+    # Popen(glsl_cmd)
+    Popen(cmd_str, shell=True)
     print(f'\n *** Running:\n\n{cmd_str}\n\n')
     return
 
